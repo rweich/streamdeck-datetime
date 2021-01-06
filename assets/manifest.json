@@ -1,0 +1,40 @@
+{
+  "Actions": [
+    {
+      "Icon": "images/actionIcon",
+      "Name": "Digital Clock",
+      "States": [
+        {
+          "Image": "images/transparent-pixel",
+          "TitleAlignment": "middle",
+          "FontSize": "15"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "Displays a digital clock",
+      "UUID": "de.rweich.clock.action"
+    }
+  ],
+  "SDKVersion": 2,
+  "Author": "rweich",
+  "CodePath": "plugin.html",
+  "PropertyInspectorPath": "propertyinspector.html",
+  "Description": "This lets you display a value chosen by the user",
+  "Name": "Digital Clock",
+  "Icon": "images/pluginIcon",
+  "URL": "https://github.com/rweich/streamdeck-clock",
+  "Version": "1.0",
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.11"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "4.1"
+  }
+}
