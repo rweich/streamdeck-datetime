@@ -899,12 +899,16 @@
     "@nodelib/fs.scandir" "2.1.4"
     fastq "^1.6.0"
 
-"@rweich/streamdeck-ts@../streamdeck-ts/rweich-streamdeck-ts-v1.0.0.tgz":
-  version "1.0.0"
-  resolved "../streamdeck-ts/rweich-streamdeck-ts-v1.0.0.tgz#a37f500e7ba731ef900df16533392390338683ef"
+"@rweich/streamdeck-ts@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@rweich/streamdeck-ts/-/streamdeck-ts-0.1.0.tgz#b40b9c5ee8913bd9d62bf7b822e52849700cd623"
+  integrity sha512-+9OojS7TPY0gC/1HPoSaPOkZ7H5QHd7G1S3lTRg6joH0+oilwwZwZT96GDq2eJnc5GcPC15Qk7mo3XW7Hao9bA==
   dependencies:
+    "@sinclair/typebox" "^0.12.7"
+    ajv "^6.12.4"
     eventemitter3 "^4.0.7"
     isomorphic-ws "^4.0.1"
+    ts-log "^2.2.3"
 
 "@sinclair/typebox@^0.12.7":
   version "0.12.7"
@@ -3250,6 +3254,11 @@ trash@6.1.1:
     p-try "^2.2.0"
     uuid "^3.3.2"
     xdg-trashdir "^2.1.1"
+
+ts-log@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/ts-log/-/ts-log-2.2.3.tgz#4da5640fe25a9fb52642cd32391c886721318efb"
+  integrity sha512-XvB+OdKSJ708Dmf9ore4Uf/q62AYDTzFcAdxc8KNML1mmAWywRFVt/dn1KYJH8Agt5UJNujfM3znU5PxgAzA2w==
 
 ts-type-guards@^0.7.0:
   version "0.7.0"

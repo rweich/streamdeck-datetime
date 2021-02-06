@@ -1,5 +1,5 @@
 {
-  "name": "streamdeck-clock",
+  "name": "@rweich/streamdeck-clock",
   "version": "1.0.0",
   "description": "a simple digital clock plugin for the elgato streamdeck",
   "private": true,
@@ -15,6 +15,7 @@
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
+    "@rweich/streamdeck-ts": "^0.1.0",
     "@sinclair/typebox": "^0.12.7",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^7.0.0",
@@ -31,7 +32,5 @@
     "build": "webpack --mode=development",
     "build-prod": "webpack --mode=production"
   },
-  "dependencies": {
-    "@rweich/streamdeck-ts": "../streamdeck-ts/rweich-streamdeck-ts-v1.0.0.tgz"
-  }
+  "dependencies": {}
 }

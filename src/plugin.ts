@@ -1,15 +1,15 @@
 import {
   assertType,
   GetSettingsEvent,
-  IncomingEventsEnum,
-  IncomingPluginEventsEnum,
+  IncomingEvents,
+  IncomingPluginEvents,
   SetTitleEvent,
-  StreamdeckFactory
+  Streamdeck,
 } from "@rweich/streamdeck-ts";
 import dayjs from "dayjs";
 import { SettingsType } from "./SettingsType";
 
-const plugin = new StreamdeckFactory().createPlugin();
+const plugin = new Streamdeck().plugin();
 const intervalCache: Record<string, NodeJS.Timeout> = {};
 let format1stLine = "HH:mm";
 let format2ndLine = "D/M";
@@ -21,14 +21,14 @@ const onTick = (context: string) => {
   ));
 };
 
-plugin.on(IncomingPluginEventsEnum.WillAppear, event => {
+plugin.on(IncomingPluginEvents.WillAppear, event => {
   plugin.sendEvent(new GetSettingsEvent(event.context));
   intervalCache[event.context] = setInterval(() => onTick(event.context), 1000);
 });
-plugin.on(IncomingPluginEventsEnum.WillDisappear, event => {
+plugin.on(IncomingPluginEvents.WillDisappear, event => {
   clearInterval(intervalCache[event.context]);
 });
-plugin.on(IncomingEventsEnum.DidReceiveSettings, event => {
+plugin.on(IncomingEvents.DidReceiveSettings, event => {
   console.log("got settings", event.settings);
   try {
     assertType(SettingsType, event.settings);

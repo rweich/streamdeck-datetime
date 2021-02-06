@@ -1,14 +1,8 @@
-import {
-  assertType,
-  GetSettingsEvent,
-  IncomingEventsEnum,
-  SetSettingsEvent,
-  StreamdeckFactory
-} from "@rweich/streamdeck-ts";
+import { assertType, GetSettingsEvent, IncomingEvents, SetSettingsEvent, Streamdeck, } from "@rweich/streamdeck-ts";
 import { is } from "ts-type-guards";
 import { SettingsType } from "./SettingsType";
 
-const pi = new StreamdeckFactory().createPropertyinspector();
+const pi = new Streamdeck().propertyinspector();
 
 const default1stLineFormat = "HH:mm";
 const default2ndLineFormat = "D/M";
@@ -48,7 +42,7 @@ const onInput = (event: Event): void => {
   }));
 };
 
-pi.on(IncomingEventsEnum.OnWebsocketOpen, event => {
+pi.on(IncomingEvents.OnWebsocketOpen, event => {
   // were there any settings saved?
   pi.sendEvent(new GetSettingsEvent(event.uuid));
 
@@ -60,7 +54,7 @@ pi.on(IncomingEventsEnum.OnWebsocketOpen, event => {
   });
 });
 
-pi.on(IncomingEventsEnum.DidReceiveSettings, event => {
+pi.on(IncomingEvents.DidReceiveSettings, event => {
   try {
     assertType(SettingsType, event.settings);
     setInputVal("format1stline", event.settings.format1stLine || default1stLineFormat);
