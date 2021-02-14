@@ -1,10 +1,12 @@
+import { existsSync } from 'fs';
 import { readFileSync, writeFileSync } from 'jsonfile';
 import * as path from 'path';
-import { config } from 'dotenv';
-import { existsSync } from 'fs';
+import pgk from '../package.json';
 
-config();
-const manifestPath: string = path.join(__dirname, '../dist/' + process.env.PLUGIN_NS + '.sdPlugin/manifest.json');
+const manifestPath: string = path.join(
+  __dirname,
+  '../dist/' + pgk['streamdeck-plugin'].namespace + '.sdPlugin/manifest.json',
+);
 
 const version = process.argv[2];
 if (version === undefined) {

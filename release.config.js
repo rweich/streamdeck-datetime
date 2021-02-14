@@ -1,4 +1,4 @@
-require('dotenv').config();
+const pkg = require('./package.json');
 
 module.exports = {
   branches: 'main',
@@ -15,10 +15,10 @@ module.exports = {
     [
       '@amille/semantic-release-plugins/archive',
       {
-        output: './' + process.env.PLUGIN_NS + '.sdPlugin.zip',
+        output: './' + pkg['streamdeck-plugin'].namespace + '.streamDeckPlugin',
         assets: [
           {
-            pattern: 'dist/' + process.env.PLUGIN_NS + '.sdPlugin/**',
+            pattern: 'dist/' + pkg['streamdeck-plugin'].namespace + '.sdPlugin/**',
             relative: 'dist',
           },
         ],
@@ -29,7 +29,7 @@ module.exports = {
       {
         assets: [
           {
-            path: './' + process.env.PLUGIN_NS + '.sdPlugin.zip',
+            path: './' + pkg['streamdeck-plugin'].namespace + '.streamDeckPlugin',
           },
         ],
       },
