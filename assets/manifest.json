@@ -2,7 +2,7 @@
   "Actions": [
     {
       "Icon": "images/actionIcon",
-      "Name": "Digital Clock",
+      "Name": "Show Datetime",
       "States": [
         {
           "Image": "images/transparent-pixel",
@@ -11,18 +11,18 @@
         }
       ],
       "SupportedInMultiActions": false,
-      "Tooltip": "Displays a digital clock",
-      "UUID": "de.rweich.clock.action"
+      "Tooltip": "Displays a datetime button",
+      "UUID": "de.rweich.datetime.action"
     }
   ],
   "SDKVersion": 2,
   "Author": "rweich",
   "CodePath": "plugin.html",
   "PropertyInspectorPath": "propertyinspector.html",
-  "Description": "This lets you display a value chosen by the user",
-  "Name": "Digital Clock",
+  "Description": "a simple datetime plugin for the elgato streamdeck",
+  "Name": "Datetime plugin",
   "Icon": "images/pluginIcon",
-  "URL": "https://github.com/rweich/streamdeck-clock",
+  "URL": "https://github.com/rweich/streamdeck-datetime",
   "Version": "1.0",
   "OS": [
     {

@@ -7,9 +7,12 @@
     [
       "@amille/semantic-release-plugins/archive",
       {
-        "output": "./de.rweich.clock.sdPlugin.zip",
+        "output": "./de.rweich.datetime.sdPlugin.zip",
         "assets": [
-          "dist/de.rweich.clock.sdPlugin"
+          {
+            "pattern": "dist/de.rweich.datetime.sdPlugin/**",
+            "relative": "dist"
+          }
         ]
       }
     ],
@@ -18,7 +21,7 @@
       {
         "assets": [
           {
-            "path": "./de.rweich.clock.sdPlugin.zip"
+            "path": "./de.rweich.datetime.sdPlugin.zip"
           }
         ]
       }

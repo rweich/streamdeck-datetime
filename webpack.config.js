@@ -5,26 +5,22 @@ const RemovePlugin = require('remove-files-webpack-plugin');
 module.exports = {
   entry: {
     plugin: './src/plugin.ts',
-    propertyinspector: './src/propertyinspector.ts'
+    propertyinspector: './src/propertyinspector.ts',
   },
   target: 'web',
   output: {
-    path: path.resolve(__dirname, 'dist/de.rweich.clock.sdPlugin/js'),
+    path: path.resolve(__dirname, 'dist/de.rweich.datetime.sdPlugin/js'),
     library: 'connectElgatoStreamDeckSocket',
-    libraryExport: 'default'
+    libraryExport: 'default',
   },
   plugins: [
     new RemovePlugin({
       before: {
-        include: [
-          './dist'
-        ]
-      }
+        include: ['./dist'],
+      },
     }),
     new CopyPlugin({
-      patterns: [
-        {from: 'assets', to: path.resolve(__dirname, 'dist/de.rweich.clock.sdPlugin'), toType: 'dir'},
-      ],
+      patterns: [{ from: 'assets', to: path.resolve(__dirname, 'dist/de.rweich.datetime.sdPlugin'), toType: 'dir' }],
     }),
   ],
   module: {
@@ -36,12 +32,12 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
-    ]
+    ],
   },
   resolve: {
     extensions: ['.ts', '.js'],
   },
   optimization: {
-    splitChunks: {}
-  }
+    splitChunks: {},
+  },
 };
