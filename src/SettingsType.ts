@@ -1,4 +1,4 @@
-import { Type } from "@sinclair/typebox";
+import { Type } from '@sinclair/typebox';
 
 export const SettingsType = Type.Object({
   format1stLine: Type.String(),
