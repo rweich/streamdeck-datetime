@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/rweich/streamdeck-datetime/compare/v1.0.0...v1.0.1) (2021-02-14)
+
+
+### Bug Fixes
+
+* improve plugin release workflow ([bcacec8](https://github.com/rweich/streamdeck-datetime/commit/bcacec821d3c642a58e6ee05325ad9442ec66350))
+
 # 1.0.0 (2021-02-14)
 
 
