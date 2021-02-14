@@ -4,7 +4,6 @@
     "target": "esnext",
     "module": "commonjs",
     "declaration": false,
-    "outDir": "dist/de.rweich.datetime.sdPlugin",
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,

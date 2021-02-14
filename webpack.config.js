@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const RemovePlugin = require('remove-files-webpack-plugin');
@@ -9,7 +10,7 @@ module.exports = {
   },
   target: 'web',
   output: {
-    path: path.resolve(__dirname, 'dist/de.rweich.datetime.sdPlugin/js'),
+    path: path.resolve(__dirname, 'dist/' + process.env.PLUGIN_NS + '.sdPlugin/js'),
     library: 'connectElgatoStreamDeckSocket',
     libraryExport: 'default',
   },
@@ -20,7 +21,18 @@ module.exports = {
       },
     }),
     new CopyPlugin({
-      patterns: [{ from: 'assets', to: path.resolve(__dirname, 'dist/de.rweich.datetime.sdPlugin'), toType: 'dir' }],
+      patterns: [
+        {
+          from: 'assets',
+          to: path.resolve(__dirname, 'dist/' + process.env.PLUGIN_NS + '.sdPlugin'),
+          toType: 'dir',
+          transform: {
+            transformer(content, path) {
+              return content.toString().replace('{{ PLUGIN_NS }}', process.env.PLUGIN_NS);
+            },
+          },
+        },
+      ],
     }),
   ],
   module: {
