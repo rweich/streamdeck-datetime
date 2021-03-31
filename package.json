@@ -11,7 +11,8 @@
     "build-prod": "webpack --mode=production",
     "lint": "eslint ./src/**/*.ts",
     "set-plugin-version": "ts-node scripts/set-plugin-version.ts",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "watch": "webpack watch --mode=development"
   },
   "streamdeck-plugin": {
     "name": "Datetime plugin",
