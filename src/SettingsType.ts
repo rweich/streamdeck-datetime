@@ -1,4 +1,4 @@
-type SettingsType = {
+export type SettingsType = {
   format1stLine: string;
   format2ndLine: string;
 };
