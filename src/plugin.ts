@@ -1,40 +1,33 @@
-import {
-  assertType,
-  GetSettingsEvent,
-  IncomingEvents,
-  IncomingPluginEvents,
-  SetTitleEvent,
-  Streamdeck,
-} from '@rweich/streamdeck-ts';
+import { Streamdeck } from '@rweich/streamdeck-ts';
 import dayjs from 'dayjs';
-import { SettingsType } from './SettingsType';
+import { isSettingsType } from './SettingsType';
 
+const UPDATE_INTERVAL_MS = 1000;
 const plugin = new Streamdeck().plugin();
 const intervalCache: Record<string, NodeJS.Timeout> = {};
+
+// TODO: fix: the format is shared between the actions
 let format1stLine = 'HH:mm';
 let format2ndLine = 'D/M';
 
 const onTick = (context: string) => {
-  plugin.sendEvent(new SetTitleEvent(dayjs().format(format1stLine + '\n' + format2ndLine), context));
+  plugin.setTitle(dayjs().format(format1stLine + '\n' + format2ndLine), context);
 };
 
-plugin.on(IncomingPluginEvents.WillAppear, (event) => {
-  plugin.sendEvent(new GetSettingsEvent(event.context));
-  intervalCache[event.context] = setInterval(() => onTick(event.context), 1000);
+plugin.on('willAppear', ({ context }) => {
+  plugin.getSettings(context);
+  intervalCache[context] = setInterval(() => onTick(context), UPDATE_INTERVAL_MS);
 });
-plugin.on(IncomingPluginEvents.WillDisappear, (event) => {
-  clearInterval(intervalCache[event.context]);
+plugin.on('willDisappear', ({ context }) => {
+  clearInterval(intervalCache[context]);
 });
-plugin.on(IncomingEvents.DidReceiveSettings, (event) => {
-  console.log('got settings', event.settings);
-  try {
-    assertType(SettingsType, event.settings);
-    format1stLine = event.settings.format1stLine || format1stLine;
-    format2ndLine = event.settings.format2ndLine || format2ndLine;
-  } catch (e) {
-    // ignore validation error and use default settings
+plugin.on('didReceiveSettings', ({ context, settings }) => {
+  console.log('got settings', settings);
+  if (isSettingsType(settings)) {
+    format1stLine = settings.format1stLine || format1stLine;
+    format2ndLine = settings.format2ndLine || format2ndLine;
   }
-  onTick(event.context);
+  onTick(context);
 });
 
 // this makes sure the streamdeck finds our init function (do not remove!)

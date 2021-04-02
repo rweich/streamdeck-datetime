@@ -1,6 +1,6 @@
-import { assertType, GetSettingsEvent, IncomingEvents, SetSettingsEvent, Streamdeck } from '@rweich/streamdeck-ts';
+import { Streamdeck } from '@rweich/streamdeck-ts';
 import { is } from 'ts-type-guards';
-import { SettingsType } from './SettingsType';
+import { isSettingsType } from './SettingsType';
 
 const pi = new Streamdeck().propertyinspector();
 
@@ -29,24 +29,22 @@ const setInputVal = (name: string, value: string): void => {
 
 const onInput = (event: Event): void => {
   console.log('item changed', event.target, 'event:', event);
-  if (pi.context === null) {
-    console.error('pi has no context or action!', pi.context, pi.action);
+  if (pi.pluginUUID === null) {
+    console.error('pi has no uuid! is it registered already?', pi.pluginUUID);
     return;
   }
   if (!is(HTMLInputElement)(event.target)) {
     return;
   }
-  pi.sendEvent(
-    new SetSettingsEvent(pi.context, {
-      format1stLine: getInputVal('format1stline') || default1stLineFormat,
-      format2ndLine: getInputVal('format2ndline') || default2ndLineFormat,
-    }),
-  );
+  pi.setSettings(pi.pluginUUID, {
+    format1stLine: getInputVal('format1stline') || default1stLineFormat,
+    format2ndLine: getInputVal('format2ndline') || default2ndLineFormat,
+  });
 };
 
-pi.on(IncomingEvents.OnWebsocketOpen, (event) => {
+pi.on('websocketOpen', ({ uuid }) => {
   // were there any settings saved?
-  pi.sendEvent(new GetSettingsEvent(event.uuid));
+  pi.getSettings(uuid);
 
   // register input event listeners
   Array.from(document.querySelectorAll('.sdpi-item-value')).forEach((input) => {
@@ -56,12 +54,11 @@ pi.on(IncomingEvents.OnWebsocketOpen, (event) => {
   });
 });
 
-pi.on(IncomingEvents.DidReceiveSettings, (event) => {
-  try {
-    assertType(SettingsType, event.settings);
-    setInputVal('format1stline', event.settings.format1stLine || default1stLineFormat);
-    setInputVal('format2ndline', event.settings.format2ndLine || default2ndLineFormat);
-  } catch (e) {
+pi.on('didReceiveSettings', ({ settings }) => {
+  if (isSettingsType(settings)) {
+    setInputVal('format1stline', settings.format1stLine || default1stLineFormat);
+    setInputVal('format2ndline', settings.format2ndLine || default2ndLineFormat);
+  } else {
     setInputVal('format1stline', default1stLineFormat);
     setInputVal('format2ndline', default2ndLineFormat);
   }

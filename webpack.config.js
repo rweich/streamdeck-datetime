@@ -45,7 +45,10 @@ module.exports = (env, options) => {
                 if (!path.match(/\.(json|html)/)) {
                   return content;
                 }
-                return content.toString().replace('{{ PLUGIN_NS }}', pluginNs).replace('{{ PLUGIN_NAME }}', pluginName);
+                return content
+                  .toString()
+                  .replace(/\{\{ PLUGIN_NS \}\}/g, pluginNs)
+                  .replace(/\{\{ PLUGIN_NAME \}\}/g, pluginName);
               },
             },
           },
