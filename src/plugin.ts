@@ -30,5 +30,4 @@ plugin.on('didReceiveSettings', ({ context, settings }) => {
   onTick(context);
 });
 
-// this makes sure the streamdeck finds our init function (do not remove!)
-export default plugin.createStreamdeckConnector();
+export default plugin;

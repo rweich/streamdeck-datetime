@@ -1,4 +1,4 @@
-const pkg = require('./package.json');
+const manifestNs = require('./build/scripts/manifest').manifestNs;
 
 module.exports = {
   branches: 'main',
@@ -15,10 +15,10 @@ module.exports = {
     [
       '@amille/semantic-release-plugins/archive',
       {
-        output: './' + pkg['streamdeck-plugin'].namespace + '.streamDeckPlugin',
+        output: './' + manifestNs + '.streamDeckPlugin',
         assets: [
           {
-            pattern: 'dist/' + pkg['streamdeck-plugin'].namespace + '.sdPlugin/**',
+            pattern: 'dist/' + manifestNs + '.sdPlugin/**',
             relative: 'dist',
           },
         ],
@@ -29,7 +29,7 @@ module.exports = {
       {
         assets: [
           {
-            path: './' + pkg['streamdeck-plugin'].namespace + '.streamDeckPlugin',
+            path: './' + manifestNs + '.streamDeckPlugin',
           },
         ],
       },

@@ -64,5 +64,4 @@ pi.on('didReceiveSettings', ({ settings }) => {
   }
 });
 
-// this makes sure the streamdeck finds our init function (do not remove!)
-export default pi.createStreamdeckConnector();
+export default pi;

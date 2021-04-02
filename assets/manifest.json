@@ -12,14 +12,14 @@
       ],
       "SupportedInMultiActions": false,
       "Tooltip": "Displays a datetime button",
-      "UUID": "{{ PLUGIN_NS }}.action"
+      "UUID": "de.rweich.datetime.action"
     }
   ],
   "SDKVersion": 2,
   "Author": "rweich",
   "CodePath": "plugin.html",
   "PropertyInspectorPath": "propertyinspector.html",
-  "Name": "{{ PLUGIN_NAME }}",
+  "Name": "Datetime plugin",
   "Description": "a simple datetime plugin for the elgato streamdeck",
   "URL": "https://github.com/rweich/streamdeck-datetime",
   "Icon": "images/pluginIcon",
