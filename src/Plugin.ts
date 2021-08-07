@@ -1,6 +1,7 @@
+import { SettingsType, isSettingsType } from './SettingsType';
+
 import { Streamdeck } from '@rweich/streamdeck-ts';
 import dayjs from 'dayjs';
-import { isSettingsType, SettingsType } from './SettingsType';
 
 const UPDATE_INTERVAL_MS = 1000;
 const plugin = new Streamdeck().plugin();

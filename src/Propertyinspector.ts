@@ -7,20 +7,20 @@ const pi = new Streamdeck().propertyinspector();
 const default1stLineFormat = 'HH:mm';
 const default2ndLineFormat = 'D/M';
 
-const getInput = (name: string): HTMLInputElement | null => {
+const getInput = (name: string): HTMLInputElement | undefined => {
   const input = document.querySelector("input[name='" + name + "']");
   if (is(HTMLInputElement)(input)) {
     return input;
   }
-  return null;
+  return;
 };
 
-const getInputVal = (name: string): string | null => {
+const getInputValue = (name: string): string | undefined => {
   const input = getInput(name);
-  return input ? input.value : null;
+  return input ? input.value : undefined;
 };
 
-const setInputVal = (name: string, value: string): void => {
+const setInputValue = (name: string, value: string): void => {
   const input = getInput(name);
   if (input) {
     input.value = value;
@@ -37,8 +37,8 @@ const onInput = (event: Event): void => {
     return;
   }
   pi.setSettings(pi.pluginUUID, {
-    format1stLine: getInputVal('format1stline') || default1stLineFormat,
-    format2ndLine: getInputVal('format2ndline') || default2ndLineFormat,
+    format1stLine: getInputValue('format1stline') || default1stLineFormat,
+    format2ndLine: getInputValue('format2ndline') || default2ndLineFormat,
   });
 };
 
@@ -47,20 +47,20 @@ pi.on('websocketOpen', ({ uuid }) => {
   pi.getSettings(uuid);
 
   // register input event listeners
-  Array.from(document.querySelectorAll('.sdpi-item-value')).forEach((input) => {
+  for (const input of Array.from(document.querySelectorAll('.sdpi-item-value'))) {
     if (is(HTMLInputElement)(input)) {
       input.addEventListener('input', onInput);
     }
-  });
+  }
 });
 
 pi.on('didReceiveSettings', ({ settings }) => {
   if (isSettingsType(settings)) {
-    setInputVal('format1stline', settings.format1stLine || default1stLineFormat);
-    setInputVal('format2ndline', settings.format2ndLine || default2ndLineFormat);
+    setInputValue('format1stline', settings.format1stLine || default1stLineFormat);
+    setInputValue('format2ndline', settings.format2ndLine || default2ndLineFormat);
   } else {
-    setInputVal('format1stline', default1stLineFormat);
-    setInputVal('format2ndline', default2ndLineFormat);
+    setInputValue('format1stline', default1stLineFormat);
+    setInputValue('format2ndline', default2ndLineFormat);
   }
 });
 
