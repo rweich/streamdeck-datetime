@@ -29,7 +29,7 @@ const setInputValue = (name: string, value: string): void => {
 
 const onInput = (event: Event): void => {
   console.log('item changed', event.target, 'event:', event);
-  if (pi.pluginUUID === null) {
+  if (pi.pluginUUID === undefined) {
     console.error('pi has no uuid! is it registered already?', pi.pluginUUID);
     return;
   }
