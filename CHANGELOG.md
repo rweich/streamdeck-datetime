@@ -1,3 +1,18 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+### [1.0.3](https://github.com/rweich/streamdeck-datetime/compare/v1.0.2...v1.0.3) (2021-08-07)
+
+
+### Miscellaneous Chores
+
+* update dependencies ([d7464c3](https://github.com/rweich/streamdeck-datetime/commit/d7464c3f8d288ee88676587677f1a090a87db39b))
+* update to newest streamdeck-template version ([be641de](https://github.com/rweich/streamdeck-datetime/commit/be641de824233c02eb780d75b0ed1622d89ad1d2))
+* upgraded dependencies (major) ([088dff8](https://github.com/rweich/streamdeck-datetime/commit/088dff897231ac021bc83c94991fcc7432c548af))
+* **deps:** bump tar from 6.1.0 to 6.1.5 ([c3d7845](https://github.com/rweich/streamdeck-datetime/commit/c3d784512db9dede6620a8de3af5479aad41ed69))
+
 ## [1.0.2](https://github.com/rweich/streamdeck-datetime/compare/v1.0.1...v1.0.2) (2021-04-02)
 
 
