@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.0.4](https://github.com/rweich/streamdeck-datetime/compare/v1.0.3...v1.0.4) (2021-08-28)
+
+
+### Miscellaneous Chores
+
+* **deps:** bump jszip from 3.6.0 to 3.7.1 ([5275f7a](https://github.com/rweich/streamdeck-datetime/commit/5275f7a059a26b59eff47c5f580780c9c862cf36))
+* replace pi-form-code with formbuilder ([b94dd68](https://github.com/rweich/streamdeck-datetime/commit/b94dd68ab3b5c5e8f84056236c0a82371513feed))
+
 ### [1.0.3](https://github.com/rweich/streamdeck-datetime/compare/v1.0.2...v1.0.3) (2021-08-07)
 
 
