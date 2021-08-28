@@ -1,4 +1,4 @@
-import { SettingsType, isSettingsType } from './SettingsType';
+import { SettingsType, defaultSettings } from './SettingsType';
 
 import EventEmitter from 'eventemitter3';
 import { FormBuilder } from '@rweich/streamdeck-formbuilder';
@@ -10,21 +10,30 @@ type EventType = {
 };
 
 export default class SettingsForm {
-  public static readonly default1stLineFormat = 'HH:mm';
-  public static readonly default2ndLineFormat = 'D/M';
   private readonly pi: PropertyInspector;
   private readonly builder: FormBuilder<SettingsType>;
   private eventEmitter = new EventEmitter<EventType>();
 
-  public constructor(pi: PropertyInspector, defaultSettings: unknown) {
+  public constructor(pi: PropertyInspector, initialSettings: unknown) {
     this.pi = pi;
-    this.builder = new FormBuilder<SettingsType>(
-      isSettingsType(defaultSettings)
-        ? defaultSettings
-        : {
-            format1stLine: SettingsForm.default1stLineFormat,
-            format2ndLine: SettingsForm.default2ndLineFormat,
-          },
+    this.builder = new FormBuilder<SettingsType>(this.mergeWithDefault(initialSettings));
+    this.builder.addElement(
+      'font',
+      this.builder
+        .createDropdown()
+        .setLabel('Font')
+        .addOption('Arial', 'Arial')
+        .addOption('Arial Black', 'Arial Black')
+        .addOption('Comic Sans MS', 'Comic Sans MS')
+        .addOption('Courier', 'courier')
+        .addOption('Courier New', 'Courier New')
+        .addOption('Impact', 'Impact')
+        .addOption('Microsoft Sans Serif', 'Microsoft Sans Serif')
+        .addOption('Symbol', 'Symbol')
+        .addOption('Tahoma', 'Tahoma')
+        .addOption('Times New Roman', 'Times New Roman')
+        .addOption('Trebuchet MS', 'Trebuchet MS')
+        .addOption('Verdana', 'Verdana'),
     );
     this.builder.addElement(
       'format1stLine',
@@ -69,5 +78,13 @@ export default class SettingsForm {
 
   public onChangeSettings(callback: (settings: SettingsType) => void): void {
     this.eventEmitter.on('change-settings', () => callback(this.builder.getFormData()));
+  }
+
+  private mergeWithDefault(initialSettings: unknown): SettingsType {
+    if (typeof initialSettings === 'object') {
+      return { ...defaultSettings, ...initialSettings };
+    }
+
+    return defaultSettings;
   }
 }
