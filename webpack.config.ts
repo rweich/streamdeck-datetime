@@ -12,6 +12,7 @@ const config = (environment: unknown, options: { mode: string; env: unknown }): 
     pluginNs = 'dev.' + manifestNs;
   }
 
+  /* eslint-disable sort-keys */
   return {
     entry: {
       plugin: './build/entries/PluginEntry.ts',
@@ -52,6 +53,10 @@ const config = (environment: unknown, options: { mode: string; env: unknown }): 
             loader: 'babel-loader',
           },
         },
+        {
+          test: /\.css$/i,
+          use: ['style-loader', 'css-loader'],
+        },
       ],
     },
     resolve: {
@@ -61,6 +66,7 @@ const config = (environment: unknown, options: { mode: string; env: unknown }): 
       splitChunks: {},
     },
   };
+  /* eslint-enable sort-keys */
 };
 
 export default config;

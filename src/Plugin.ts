@@ -1,5 +1,6 @@
 import { SettingsType, isSettingsType } from './SettingsType';
 
+import SettingsForm from './SettingsForm';
 import { Streamdeck } from '@rweich/streamdeck-ts';
 import dayjs from 'dayjs';
 
@@ -14,7 +15,10 @@ const onTick = (context: string) => {
 };
 
 plugin.on('willAppear', ({ context }) => {
-  settingsCache[context] = { format1stLine: 'HH:mm', format2ndLine: 'D/M' };
+  settingsCache[context] = {
+    format1stLine: SettingsForm.default1stLineFormat,
+    format2ndLine: SettingsForm.default2ndLineFormat,
+  };
   intervalCache[context] = setInterval(() => onTick(context), UPDATE_INTERVAL_MS);
   plugin.getSettings(context);
 });
@@ -24,12 +28,8 @@ plugin.on('willDisappear', ({ context }) => {
 plugin.on('didReceiveSettings', ({ context, settings }) => {
   console.log('got settings', settings);
   if (isSettingsType(settings)) {
-    if (settings.format1stLine) {
-      settingsCache[context].format1stLine = settings.format1stLine;
-    }
-    if (settings.format2ndLine) {
-      settingsCache[context].format2ndLine = settings.format2ndLine;
-    }
+    settingsCache[context].format1stLine = settings.format1stLine;
+    settingsCache[context].format2ndLine = settings.format2ndLine;
   }
   onTick(context);
 });
