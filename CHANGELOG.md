@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.1.1](https://github.com/rweich/streamdeck-datetime/compare/v1.1.0...v1.1.1) (2021-08-28)
+
+
+### Bug Fixes
+
+* stop sending the same image over and over ([e486f6a](https://github.com/rweich/streamdeck-datetime/commit/e486f6a76fc3c8d496848d9a302e01950195a331))
+
 ## [1.1.0](https://github.com/rweich/streamdeck-datetime/compare/v1.0.4...v1.1.0) (2021-08-28)
 
 
