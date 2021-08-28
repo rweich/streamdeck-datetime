@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.0](https://github.com/rweich/streamdeck-datetime/compare/v1.0.4...v1.1.0) (2021-08-28)
+
+
+### Features
+
+* change style of time and date ([e27467d](https://github.com/rweich/streamdeck-datetime/commit/e27467d1693234874c1804342d77913144926d55))
+
 ### [1.0.4](https://github.com/rweich/streamdeck-datetime/compare/v1.0.3...v1.0.4) (2021-08-28)
 
 
