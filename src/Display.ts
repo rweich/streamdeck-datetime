@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 
 export default class Display {
   private readonly plugin: Plugin;
-  private lastText = { line1: '', line2: '' };
+  private lastText = { font: '', line1: '', line2: '' };
 
   constructor(plugin: Plugin) {
     this.plugin = plugin;
@@ -26,11 +26,14 @@ export default class Display {
     const day = dayjs();
     const line1 = day.format(settings.format1stLine);
     const line2 = day.format(settings.format2ndLine);
-    if (this.lastText.line1 === line1 && this.lastText.line2 === line2) {
+    if (this.lastText.line1 === line1 && this.lastText.line2 === line2 && this.lastText.font === settings.font) {
       return;
     }
-    this.lastText.line1 = line1;
-    this.lastText.line2 = line2;
+    this.lastText = {
+      font: settings.font,
+      line1,
+      line2,
+    };
     context.fillStyle = 'white';
     context.font = `40px "${settings.font}"`;
     context.textAlign = 'center';
