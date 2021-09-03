@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.1.2](https://github.com/rweich/streamdeck-datetime/compare/v1.1.1...v1.1.2) (2021-09-03)
+
+
+### Bug Fixes
+
+* display not updating on font changes ([a11fa95](https://github.com/rweich/streamdeck-datetime/commit/a11fa957c6b830b06beb5179851ab89b0ce1a88f))
+
+
+### Miscellaneous Chores
+
+* update dependencies ([0bc4dec](https://github.com/rweich/streamdeck-datetime/commit/0bc4decf67d91dbdf376e906d32e2abe3a940889))
+
+
+### Documentation
+
+* add screenshot ([0ec91b1](https://github.com/rweich/streamdeck-datetime/commit/0ec91b11525b0059a621faf35b87b42ff72d8a15))
+
 ### [1.1.1](https://github.com/rweich/streamdeck-datetime/compare/v1.1.0...v1.1.1) (2021-08-28)
 
 
