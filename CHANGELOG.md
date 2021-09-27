@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.1.3](https://github.com/rweich/streamdeck-datetime/compare/v1.1.2...v1.1.3) (2021-09-27)
+
+
+### Miscellaneous Chores
+
+* update dependencies ([e345d5b](https://github.com/rweich/streamdeck-datetime/commit/e345d5bab11d084252d18af4d4bdeb10416e8c79))
+
 ### [1.1.2](https://github.com/rweich/streamdeck-datetime/compare/v1.1.1...v1.1.2) (2021-09-03)
 
 
