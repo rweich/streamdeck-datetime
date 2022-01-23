@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.1.4](https://github.com/rweich/streamdeck-datetime/compare/v1.1.3...v1.1.4) (2022-01-23)
+
+
+### Miscellaneous Chores
+
+* **deps:** bump nanoid from 3.1.28 to 3.2.0 ([cb475c4](https://github.com/rweich/streamdeck-datetime/commit/cb475c4cfc23a6b689bcfd540b1e0b325230375d))
+* **deps:** bump node-fetch from 2.6.5 to 2.6.7 ([1c6ed42](https://github.com/rweich/streamdeck-datetime/commit/1c6ed42bbf5701632e690dbe3ecfc1898103fbd3))
+
 ### [1.1.3](https://github.com/rweich/streamdeck-datetime/compare/v1.1.2...v1.1.3) (2021-09-27)
 
 
