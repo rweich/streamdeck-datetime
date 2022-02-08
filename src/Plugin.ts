@@ -1,7 +1,7 @@
-import { SettingsType, defaultSettings, isSettingsType } from './SettingsType';
+import { Streamdeck } from '@rweich/streamdeck-ts';
 
 import Display from './Display';
-import { Streamdeck } from '@rweich/streamdeck-ts';
+import { defaultSettings, isSettingsType, SettingsType } from './SettingsType';
 
 const UPDATE_INTERVAL_MS = 1000;
 const plugin = new Streamdeck().plugin();

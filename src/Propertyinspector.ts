@@ -1,5 +1,6 @@
-import SettingsForm from './SettingsForm';
 import { Streamdeck } from '@rweich/streamdeck-ts';
+
+import SettingsForm from './SettingsForm';
 
 const pi = new Streamdeck().propertyinspector();
 

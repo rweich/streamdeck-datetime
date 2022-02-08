@@ -1,6 +1,7 @@
 import Plugin from '@rweich/streamdeck-ts/dist/Plugin';
-import { SettingsType } from './SettingsType';
 import dayjs from 'dayjs';
+
+import { SettingsType } from './SettingsType';
 
 export default class Display {
   private readonly plugin: Plugin;
