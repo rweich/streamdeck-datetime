@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0](https://github.com/rweich/streamdeck-datetime/compare/v1.1.4...v2.0.0) (2022-02-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* the minimum required version of node is now v14.17
+
+### Miscellaneous Chores
+
+* autofix linting errors ([b9c92ee](https://github.com/rweich/streamdeck-datetime/commit/b9c92ee1eb3784c5f985e0541dc7babcf2965560))
+* update template files from upstream ([077b869](https://github.com/rweich/streamdeck-datetime/commit/077b86902cf8604d996cba6c892956addced8a1c))
+* upgrade dependencies (major) ([2077249](https://github.com/rweich/streamdeck-datetime/commit/20772497a8ffbe3aae009c541beaa2c884920b18))
+
 ### [1.1.4](https://github.com/rweich/streamdeck-datetime/compare/v1.1.3...v1.1.4) (2022-01-23)
 
 
