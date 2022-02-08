@@ -1,9 +1,9 @@
-import { SettingsType, defaultSettings } from './SettingsType';
-
-import EventEmitter from 'eventemitter3';
 import { FormBuilder } from '@rweich/streamdeck-formbuilder';
 import { PropertyInspector } from '@rweich/streamdeck-ts';
+import { default as EventEmitter } from 'eventemitter3';
 import { is } from 'ts-type-guards';
+
+import { defaultSettings, SettingsType } from './SettingsType';
 
 type EventType = {
   'change-settings': () => void;
