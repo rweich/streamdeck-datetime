@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [2.0.1](https://github.com/rweich/streamdeck-datetime/compare/v2.0.0...v2.0.1) (2022-03-29)
+
+
+### Miscellaneous Chores
+
+* **deps:** bump minimist from 1.2.5 to 1.2.6 ([32a72ac](https://github.com/rweich/streamdeck-datetime/commit/32a72acecdc040873609746e0291160987ed24e3))
+
 ## [2.0.0](https://github.com/rweich/streamdeck-datetime/compare/v1.1.4...v2.0.0) (2022-02-08)
 
 
