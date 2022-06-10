@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [2.0.3](https://github.com/rweich/streamdeck-datetime/compare/v2.0.2...v2.0.3) (2022-06-10)
+
+
+### Miscellaneous Chores
+
+* **deps-dev:** bump semantic-release from 19.0.2 to 19.0.3 ([57d57b8](https://github.com/rweich/streamdeck-datetime/commit/57d57b83344860d6db06ffbc9b7ee29eb35bde8c))
+
 ### [2.0.2](https://github.com/rweich/streamdeck-datetime/compare/v2.0.1...v2.0.2) (2022-06-04)
 
 
