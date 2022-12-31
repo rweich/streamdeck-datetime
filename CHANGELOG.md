@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.6](https://github.com/rweich/streamdeck-datetime/compare/v2.0.5...v2.0.6) (2022-12-31)
+
+
+### Bug Fixes
+
+* set conventionalcommits as preset for the commit-analyzer ([247e74c](https://github.com/rweich/streamdeck-datetime/commit/247e74cb8d635fd53171ef1cebea21e57c6c1b20))
+
+
+### Miscellaneous Chores
+
+* update all dependencies (major) ([5c684c2](https://github.com/rweich/streamdeck-datetime/commit/5c684c231535b355201fb6688256b276d40e53b1))
+
 ### [2.0.5](https://github.com/rweich/streamdeck-datetime/compare/v2.0.4...v2.0.5) (2022-12-31)
 
 
