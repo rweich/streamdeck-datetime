@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [2.0.5](https://github.com/rweich/streamdeck-datetime/compare/v2.0.4...v2.0.5) (2022-12-31)
+
+
+### Bug Fixes
+
+* error on multiple instances using the same settings ([1818eb7](https://github.com/rweich/streamdeck-datetime/commit/1818eb788855a3a795734c27f9e767f93eafdb3d))
+
+
+### Miscellaneous Chores
+
+* **deps:** bump loader-utils from 1.4.0 to 1.4.2 ([dbfde25](https://github.com/rweich/streamdeck-datetime/commit/dbfde25a4281c7420c2f96e6e2d6b1e123403927))
+* update template files from upstream ([6562adb](https://github.com/rweich/streamdeck-datetime/commit/6562adb8029b843b1856e76e36767e3077a65e71))
+
 ### [2.0.4](https://github.com/rweich/streamdeck-datetime/compare/v2.0.3...v2.0.4) (2022-10-15)
 
 
