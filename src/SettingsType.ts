@@ -17,8 +17,10 @@ export function isSettingsType(payload: unknown): payload is SettingsType {
   );
 }
 
-export const defaultSettings: SettingsType = {
-  font: 'Verdana',
-  format1stLine: 'HH:mm',
-  format2ndLine: 'D/M',
-};
+export function getDefaultSettings(): SettingsType {
+  return {
+    font: 'Verdana',
+    format1stLine: 'HH:mm',
+    format2ndLine: 'D/M',
+  };
+}

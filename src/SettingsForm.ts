@@ -3,7 +3,7 @@ import { PropertyInspector } from '@rweich/streamdeck-ts';
 import { default as EventEmitter } from 'eventemitter3';
 import { is } from 'ts-type-guards';
 
-import { defaultSettings, SettingsType } from './SettingsType';
+import { getDefaultSettings, SettingsType } from './SettingsType';
 
 type EventType = {
   'change-settings': () => void;
@@ -82,9 +82,9 @@ export default class SettingsForm {
 
   private mergeWithDefault(initialSettings: unknown): SettingsType {
     if (typeof initialSettings === 'object') {
-      return { ...defaultSettings, ...initialSettings };
+      return { ...getDefaultSettings(), ...initialSettings };
     }
 
-    return defaultSettings;
+    return getDefaultSettings();
   }
 }
