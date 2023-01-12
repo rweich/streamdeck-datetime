@@ -20,6 +20,7 @@
   "dependencies": {
     "@rweich/streamdeck-formbuilder": "^2.0.0",
     "@rweich/streamdeck-ts": "^5.0.0",
+    "@rweich/webworker-timer": "^1.0.0",
     "dayjs": "^1.10.6",
     "eventemitter3": "^5.0.0",
     "ts-type-guards": "^0.7.0"

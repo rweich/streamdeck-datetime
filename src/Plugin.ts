@@ -1,4 +1,5 @@
 import { Streamdeck } from '@rweich/streamdeck-ts';
+import { clearInterval, setInterval } from '@rweich/webworker-timer';
 
 import Display from './Display';
 import { getDefaultSettings, isSettingsType, SettingsType } from './SettingsType';
@@ -6,7 +7,7 @@ import { getDefaultSettings, isSettingsType, SettingsType } from './SettingsType
 const UPDATE_INTERVAL_MS = 1000;
 const plugin = new Streamdeck().plugin();
 const display = new Display(plugin);
-const intervalCache: Record<string, NodeJS.Timeout> = {};
+const intervalCache: Record<string, number> = {};
 const settingsCache: Record<string, SettingsType> = {};
 
 const onTick = (context: string) => display.show(settingsCache[context], context);
