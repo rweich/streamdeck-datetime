@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.7](https://github.com/rweich/streamdeck-datetime/compare/v2.0.6...v2.0.7) (2023-01-15)
+
+
+### Bug Fixes
+
+* change the timer-methods used ([c5079bd](https://github.com/rweich/streamdeck-datetime/commit/c5079bd1795b3a6cffd4799fb2ba7e696a8494ac))
+
 ## [2.0.6](https://github.com/rweich/streamdeck-datetime/compare/v2.0.5...v2.0.6) (2022-12-31)
 
 
