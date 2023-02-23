@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: step-security/harden-runner@ebacdc22ef6c2cfb85ee5ded8f2e640f4c776dd5 # 2.0.0
+      - uses: step-security/harden-runner@18bf8ad2ca49c14cbb28b91346d626ccfb00c518 # 2.1.0
         with:
           disable-sudo: true
           egress-policy: block
@@ -23,12 +23,13 @@ jobs:
             uploads.github.com:443
 
       - name: Checkout
-        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # 3.1.0
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # 3.3.0
         with:
           persist-credentials: false
+          token: ${{ secrets.SEMANTIC_RELEASE_PAT }}
 
       - name: Install Node
-        uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # 3.5.1
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # 3.6.0
         with:
           node-version: 16
 
@@ -55,6 +56,23 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: Outputs
-        if: steps.semantic.outputs.new_release_published == 'true'
         run: |
-          echo release version: ${{ steps.semantic.outputs.new_release_version }}
+          cat <<EOO >> $GITHUB_STEP_SUMMARY
+            ---
+
+            ### Semantic release output
+
+            <table>
+              <tr><th>published</th><td>${{ steps.semantic.outputs.new_release_published }}</td></tr>
+              <tr><th>last release</th><td>${{ steps.semantic.outputs.last_release_version }}</td></tr>
+              <tr><th>next release</th><td>${{ steps.semantic.outputs.new_release_version }}</td></tr>
+            </table>
+
+            ---
+
+            #### Release-Notes
+
+            ${{ steps.semantic.outputs.new_release_notes }}
+
+          ---
+          EOO
