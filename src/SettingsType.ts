@@ -6,6 +6,8 @@ export type SettingsType = {
   format2ndLine: string;
   fontSize1stLine?: string;
   fontSize2ndLine?: string;
+  yLine1?: string;
+  yLine2?: string;
 };
 
 export function isSettingsType(payload: unknown): payload is SettingsType {
@@ -26,5 +28,7 @@ export function getDefaultSettings(): SettingsType {
     fontSize2ndLine: '28',
     format1stLine: 'HH:mm',
     format2ndLine: 'D/M',
+    yLine1: '60',
+    yLine2: '110',
   };
 }
