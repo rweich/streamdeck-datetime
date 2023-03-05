@@ -29,6 +29,12 @@ plugin.on('didReceiveSettings', ({ context, settings }) => {
     if (settings.fontSize2ndLine !== undefined) {
       settingsCache[context].fontSize2ndLine = settings.fontSize2ndLine;
     }
+    if (settings.yLine1 !== undefined) {
+      settingsCache[context].yLine1 = settings.yLine1;
+    }
+    if (settings.yLine2 !== undefined) {
+      settingsCache[context].yLine2 = settings.yLine2;
+    }
   }
   onTick(context);
 });

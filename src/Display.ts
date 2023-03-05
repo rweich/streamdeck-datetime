@@ -8,7 +8,10 @@ type TextType = { font: string; line1: string; line2: string };
 export default class Display {
   private readonly plugin: Plugin;
   private lastText: Record<string, TextType> = {};
-  private lastSettings: Record<string, Pick<SettingsType, 'fontSize1stLine' | 'fontSize2ndLine'>> = {};
+  private lastSettings: Record<
+    string,
+    Pick<SettingsType, 'fontSize1stLine' | 'fontSize2ndLine' | 'yLine1' | 'yLine2'>
+  > = {};
 
   constructor(plugin: Plugin) {
     this.plugin = plugin;
@@ -37,9 +40,9 @@ export default class Display {
     context.fillStyle = 'white';
     context.font = `${settings.fontSize1stLine}px "${newText.font}"`;
     context.textAlign = 'center';
-    context.fillText(newText.line1, 72, 60, 144);
+    context.fillText(newText.line1, 72, Number(settings.yLine1), 144);
     context.font = `${settings.fontSize2ndLine}px "${newText.font}"`;
-    context.fillText(newText.line2, 72, 110, 144);
+    context.fillText(newText.line2, 72, Number(settings.yLine2), 144);
     this.plugin.setImage(canvas.toDataURL('image/png'), pluginContext);
   }
 
@@ -81,6 +84,11 @@ export default class Display {
       return true;
     }
     const last = this.lastSettings[pluginContext];
-    return last.fontSize1stLine !== newSettings.fontSize1stLine || last.fontSize2ndLine !== newSettings.fontSize2ndLine;
+    return (
+      last.fontSize1stLine !== newSettings.fontSize1stLine
+      || last.fontSize2ndLine !== newSettings.fontSize2ndLine
+      || last.yLine1 !== newSettings.yLine1
+      || last.yLine2 !== newSettings.yLine2
+    );
   }
 }
