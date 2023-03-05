@@ -39,10 +39,12 @@ export default class SettingsForm {
       'format1stLine',
       this.builder.createInput().setLabel('1st line').setPlaceholder('Enter datetime string (eg. HH:mm)'),
     );
+    this.builder.addElement('fontSize1stLine', this.builder.createRange(20, 80, 5).setLabel('font size').enableTicks());
     this.builder.addElement(
       'format2ndLine',
       this.builder.createInput().setLabel('2nd line').setPlaceholder('Enter datetime string (eg. DD.MM.)'),
     );
+    this.builder.addElement('fontSize2ndLine', this.builder.createRange(20, 80, 5).setLabel('font size').enableTicks());
     const template = document.createElement('template');
     template.innerHTML = `
       <table>

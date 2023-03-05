@@ -4,6 +4,8 @@ export type SettingsType = {
   font: string;
   format1stLine: string;
   format2ndLine: string;
+  fontSize1stLine?: string;
+  fontSize2ndLine?: string;
 };
 
 export function isSettingsType(payload: unknown): payload is SettingsType {
@@ -20,6 +22,8 @@ export function isSettingsType(payload: unknown): payload is SettingsType {
 export function getDefaultSettings(): SettingsType {
   return {
     font: 'Verdana',
+    fontSize1stLine: '40',
+    fontSize2ndLine: '28',
     format1stLine: 'HH:mm',
     format2ndLine: 'D/M',
   };

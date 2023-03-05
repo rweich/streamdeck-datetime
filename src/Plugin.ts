@@ -19,11 +19,16 @@ plugin.on('willAppear', ({ context }) => {
 });
 plugin.on('willDisappear', ({ context }) => clearInterval(intervalCache[context]));
 plugin.on('didReceiveSettings', ({ context, settings }) => {
-  console.log('got settings', context, settings);
   if (isSettingsType(settings)) {
     settingsCache[context].font = settings.font;
     settingsCache[context].format1stLine = settings.format1stLine;
     settingsCache[context].format2ndLine = settings.format2ndLine;
+    if (settings.fontSize1stLine !== undefined) {
+      settingsCache[context].fontSize1stLine = settings.fontSize1stLine;
+    }
+    if (settings.fontSize2ndLine !== undefined) {
+      settingsCache[context].fontSize2ndLine = settings.fontSize2ndLine;
+    }
   }
   onTick(context);
 });
