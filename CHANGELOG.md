@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.0](https://github.com/rweich/streamdeck-datetime/compare/v2.0.8...v2.1.0) (2023-03-05)
+
+
+### Features
+
+* allow changing font-size ([0108afd](https://github.com/rweich/streamdeck-datetime/commit/0108afdb2483f76d24c2724459dab3d2b0a8cad8))
+* allow to change the vertical position of the text ([45eae58](https://github.com/rweich/streamdeck-datetime/commit/45eae58c227fa69c7f5ec6079659beaaf58c2f0a))
+
+
+### Bug Fixes
+
+* handling of empty lines ([d3a24f8](https://github.com/rweich/streamdeck-datetime/commit/d3a24f8d3aa532094410190636e058015119e6a7))
+
+
+### Miscellaneous Chores
+
+* **deps:** bump step-security/harden-runner from 2.1.0 to 2.2.0 ([1be97cc](https://github.com/rweich/streamdeck-datetime/commit/1be97cccfafb443acc266e035cbad9cf25a8186a))
+
 ## [2.0.8](https://github.com/rweich/streamdeck-datetime/compare/v2.0.7...v2.0.8) (2023-02-04)
 
 
