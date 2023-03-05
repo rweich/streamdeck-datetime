@@ -45,8 +45,8 @@ export default class Display {
 
   private getNewText(settings: SettingsType): TextType {
     const day = dayjs();
-    const line1 = day.format(settings.format1stLine);
-    const line2 = day.format(settings.format2ndLine);
+    const line1 = settings.format1stLine === '' ? '' : day.format(settings.format1stLine);
+    const line2 = settings.format2ndLine === '' ? '' : day.format(settings.format2ndLine);
 
     return {
       font: settings.font,
