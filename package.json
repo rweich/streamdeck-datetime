@@ -18,7 +18,7 @@
     "watch": "webpack watch --mode=development"
   },
   "dependencies": {
-    "@rweich/streamdeck-formbuilder": "^2.0.0",
+    "@rweich/streamdeck-formbuilder": "^2.1.0",
     "@rweich/streamdeck-ts": "^5.0.0",
     "@rweich/webworker-timer": "^1.0.0",
     "dayjs": "^1.10.6",
