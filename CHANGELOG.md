@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1](https://github.com/rweich/streamdeck-datetime/compare/v2.1.0...v2.1.1) (2023-07-29)
+
+
+### Miscellaneous Chores
+
+* **deps-dev:** bump webpack from 5.75.0 to 5.76.0 ([e7e104d](https://github.com/rweich/streamdeck-datetime/commit/e7e104d1cfd5939ac72244fca9da84db0333eb5a))
+* **deps:** bump actions/checkout from 3.3.0 to 3.4.0 ([479261c](https://github.com/rweich/streamdeck-datetime/commit/479261c132577935d628432fbf740e9770bd94c1))
+* **deps:** bump actions/checkout from 3.4.0 to 3.5.0 ([4ab7e53](https://github.com/rweich/streamdeck-datetime/commit/4ab7e530eb5918d41797abc4277eab6bfaac6344))
+* **deps:** bump actions/checkout from 3.5.0 to 3.5.2 ([9a1dce5](https://github.com/rweich/streamdeck-datetime/commit/9a1dce5149f73485becbaa8632fb26f2a4ec76e2))
+* **deps:** bump actions/checkout from 3.5.2 to 3.5.3 ([3c88b93](https://github.com/rweich/streamdeck-datetime/commit/3c88b939ad1501d3b727dc5ce689a24459795e42))
+* **deps:** bump actions/setup-node from 3.6.0 to 3.7.0 ([85745eb](https://github.com/rweich/streamdeck-datetime/commit/85745eb6db8a651ed6cac196ba1e281b0aceb5d1))
+* **deps:** bump cycjimmy/semantic-release-action from 3.2.0 to 3.3.0 ([3faa331](https://github.com/rweich/streamdeck-datetime/commit/3faa3313031b8e2fc348578eeafe3ac08e378a88))
+* **deps:** bump cycjimmy/semantic-release-action from 3.3.0 to 3.4.0 ([5c586ee](https://github.com/rweich/streamdeck-datetime/commit/5c586ee647559cc381b8fc5460e25b55a16d4e6b))
+* **deps:** bump cycjimmy/semantic-release-action from 3.4.0 to 3.4.2 ([cb5504d](https://github.com/rweich/streamdeck-datetime/commit/cb5504d86baebea76b1a367b4362b844e2b97e93))
+* **deps:** bump semver from 5.7.1 to 5.7.2 ([c014232](https://github.com/rweich/streamdeck-datetime/commit/c0142324ff6c80c1e974f3cbf709ad4824d70dd0))
+* **deps:** bump step-security/harden-runner from 2.2.0 to 2.2.1 ([10ed08f](https://github.com/rweich/streamdeck-datetime/commit/10ed08ffda2abf59ec1adfe2b69625fb000b6437))
+* **deps:** bump step-security/harden-runner from 2.2.1 to 2.3.0 ([6bda114](https://github.com/rweich/streamdeck-datetime/commit/6bda114c7dd1b6d924a06eb3f945ff303cdf04d7))
+* **deps:** bump step-security/harden-runner from 2.3.0 to 2.3.1 ([1eea54a](https://github.com/rweich/streamdeck-datetime/commit/1eea54a2214911eda6bae6933307fe2f8a51c09b))
+* **deps:** bump step-security/harden-runner from 2.3.1 to 2.4.0 ([524869b](https://github.com/rweich/streamdeck-datetime/commit/524869b85244d974e4fa485d338342a1ce2f08f4))
+* **deps:** bump step-security/harden-runner from 2.4.0 to 2.4.1 ([d174350](https://github.com/rweich/streamdeck-datetime/commit/d1743501273affacdd49163393b34512e95ebd07))
+* **deps:** bump step-security/harden-runner from 2.4.1 to 2.5.0 ([696430b](https://github.com/rweich/streamdeck-datetime/commit/696430b05a06f5d17ef5ee73178a4445ac61c5ac))
+* **deps:** bump tj-actions/branch-names from 6.4 to 6.5 ([6aec639](https://github.com/rweich/streamdeck-datetime/commit/6aec639e3f18b356409693b17d2bb757eb52c19d))
+* **deps:** bump wagoid/commitlint-github-action from 5.3.1 to 5.4.0 ([afcdbe3](https://github.com/rweich/streamdeck-datetime/commit/afcdbe33a7ab4cbed0935a62e0ca15cc486657ec))
+* **deps:** bump wagoid/commitlint-github-action from 5.4.0 to 5.4.1 ([d96c9b3](https://github.com/rweich/streamdeck-datetime/commit/d96c9b366fc4c413c0dda4496c8d7ebc0ee60982))
+* **deps:** bump wagoid/commitlint-github-action from 5.4.1 to 5.4.3 ([5e975f7](https://github.com/rweich/streamdeck-datetime/commit/5e975f74218a99750ca195d9ee28e014ee155eb8))
+* **deps:** bump word-wrap from 1.2.3 to 1.2.4 ([bbbf9e8](https://github.com/rweich/streamdeck-datetime/commit/bbbf9e83f5a3ed8ec017b607592ba5fee806857e))
+
 ## [2.1.0](https://github.com/rweich/streamdeck-datetime/compare/v2.0.8...v2.1.0) (2023-03-05)
 
 
